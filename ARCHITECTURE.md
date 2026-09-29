@@ -12,6 +12,9 @@
 ├── js/
 │   ├── data.js         # 数据层：分数常量、难度分级、百分数格式化
 │   └── app.js          # 应用层：视图切换、表格渲染、出题引擎、计时挑战
+├── manifest.webmanifest # PWA 清单：名称/图标/独立窗口模式
+├── icon.svg            # 应用图标
+├── sw.js               # Service Worker：预缓存静态资源，支持离线使用与应用安装
 ├── README.md
 └── ARCHITECTURE.md
 ```

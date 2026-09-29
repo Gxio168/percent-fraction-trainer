@@ -21,6 +21,16 @@
 npx serve .
 ```
 
+## 安装为应用（PWA）
+
+线上版 <https://gxio168.github.io/percent-fraction-trainer/> 支持安装：
+
+1. 用 Edge / Chrome 打开上面的地址
+2. 点击地址栏右侧的**安装**图标（⊕），或在页面菜单中选择「应用 → 安装」
+3. 之后可从桌面图标直接启动独立窗口，**完全离线可用**（由 `sw.js` 缓存实现，更新版本后自动刷新）
+
+> 本地双击 `index.html` 的用法不依赖网络，也不会注册 Service Worker。
+
 ## 项目结构
 
 详见 [ARCHITECTURE.md](./ARCHITECTURE.md)。
