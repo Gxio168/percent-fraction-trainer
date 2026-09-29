@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>常见百化分速记</title>
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y="0.9em" font-size="90">%</text></svg>'>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="header-text">
+        <h1>常见百化分</h1>
+        <p class="subtitle">行测资料分析 · 分数百分数速记与训练</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b id="stat-total">0</b><span>对照条目</span></div>
+        <div class="stat"><b id="stat-base">0</b><span>基础 1/n</span></div>
+        <div class="stat"><b id="stat-derived">0</b><span>衍生分数</span></div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-view="table">速记表</button>
+    <button class="tab-btn" data-view="quiz">刷题练习</button>
+    <button class="tab-btn" data-view="challenge">计时挑战</button>
+  </nav>
+
+  <main>
+    <!-- 速记表 -->
+    <section id="view-table" class="view active">
+      <div class="toolbar">
+        <span class="toolbar-label">排序：</span>
+        <button class="chip-btn active" data-sort="den">按分母</button>
+        <button class="chip-btn" data-sort="pct">按百分数</button>
+        <button class="chip-btn" data-sort="group">按分组</button>
+      </div>
+      <div id="table-container"></div>
+      <div class="legend">
+        <span><span class="dot base"></span>基础 1/n（分母 2~20）</span>
+        <span><span class="dot derived"></span>高频衍生分数</span>
+        <span>精确值以 = 标示，其余为近似值</span>
+      </div>
+    </section>
+
+    <!-- 刷题练习 -->
+    <section id="view-quiz" class="view">
+      <div class="toolbar">
+        <span class="toolbar-label">方向：</span>
+        <button class="chip-btn active" data-qdir="p2f">百分数 → 分数</button>
+        <button class="chip-btn" data-qdir="f2p">分数 → 百分数</button>
+        <span class="toolbar-label">难度：</span>
+        <button class="chip-btn active" data-qdiff="easy">简单</button>
+        <button class="chip-btn" data-qdiff="medium">中等</button>
+        <button class="chip-btn" data-qdiff="hard">困难</button>
+        <button class="chip-btn" data-qdiff="all">混合</button>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-meta">
+          <span id="quiz-streak" class="badge">连对 0</span>
+          <span id="quiz-score" class="badge muted">已答 0 · 正确率 --</span>
+        </div>
+        <div id="quiz-question" class="question">点击下方按钮开始</div>
+        <div id="quiz-options" class="options"></div>
+        <div id="quiz-feedback" class="feedback"></div>
+        <button id="quiz-next" class="primary-btn">下一题</button>
+      </div>
+    </section>
+
+    <!-- 计时挑战 -->
+    <section id="view-challenge" class="view">
+      <div id="challenge-intro" class="quiz-card center">
+        <h2>50 题计时挑战</h2>
+        <p>混合全部难度，答完自动进入下一题，结束后给出用时、正确率与错题回顾。</p>
+        <button id="challenge-start" class="primary-btn">开始挑战</button>
+      </div>
+
+      <div id="challenge-running" class="hidden">
+        <div class="toolbar challenge-bar">
+          <span id="challenge-progress" class="badge">第 1 / 50 题</span>
+          <span id="challenge-timer" class="badge">00:00</span>
+          <span id="challenge-right" class="badge ok">对 0</span>
+          <span id="challenge-wrong" class="badge err">错 0</span>
+          <button id="challenge-abort" class="ghost-btn">放弃</button>
+        </div>
+        <div class="quiz-card">
+          <div id="challenge-question" class="question"></div>
+          <div id="challenge-options" class="options"></div>
+          <div id="challenge-feedback" class="feedback"></div>
+        </div>
+      </div>
+
+      <div id="challenge-result" class="hidden">
+        <div class="quiz-card center">
+          <h2>挑战完成</h2>
+          <div id="challenge-summary" class="summary"></div>
+          <button id="challenge-restart" class="primary-btn">再来一次</button>
+        </div>
+        <h3 class="wrong-title">错题回顾</h3>
+        <div id="challenge-wrongs"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>数据范围：1/2 ~ 1/20 及高频衍生分数 · 本地运行，无网络请求</span>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
